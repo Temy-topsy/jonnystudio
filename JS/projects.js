@@ -37,7 +37,7 @@
         "A modern solar energy website designed to present reliable power solutions clearly and turn interest into assessment requests.",
       role: "Web Design / Frontend Development",
       tech: "HTML Â· CSS Â· JavaScript",
-      href: "https://excess-energy.vercel.app/",
+      href: "https://excessenergy.app",
       status: "live",
       accent: "#fbbf24",
       image: "assets/images/excess-energy.png",
