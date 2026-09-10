@@ -65,10 +65,10 @@
         "A modern waitlist landing page for a mobility platform, designed to introduce a simpler way to move, build early interest, and turn visitors into launch-ready users.",
       role: "Web Design / Frontend Development",
       tech: "HTML Â· CSS Â· JavaScript",
-      href: "https://new-wakabout-waitlist.onrender.com/?ref=WAKAJM94",
+      href: "https://wakabout.app/",
       status: "live",
       accent: "#fdeb8c",
-      image: "assets/images/wakabout.png",
+      image: "assets/images/wakabout-new.png",
     },
     {
       id: "shine-restaurant",
