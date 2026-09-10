@@ -1,0 +1,271 @@
+/* ============================================================
+   responsive.css — breakpoints & adaptive layout
+   Designed mobile-considerate, not merely shrunk.
+   Breakpoints:  1080px (laptop)  900px (tablet)
+                 640px (large mobile)  400px (small mobile)
+   ============================================================ */
+
+/* ---- Large desktop refinement --------------------------- */
+@media (min-width: 1600px) {
+  :root {
+    --w-container: 84rem;
+  }
+}
+
+/* ---- Laptop / small desktop ----------------------------- */
+@media (max-width: 1080px) {
+  .hero__code {
+    width: min(66vw, 40rem);
+    opacity: 0.55;
+  }
+
+  .studio__layout {
+    grid-template-columns: 0.7fr 1.3fr;
+  }
+}
+
+/* ---- Tablet --------------------------------------------- */
+@media (max-width: 900px) {
+  /* Swap desktop nav for burger menu */
+  .nav__links,
+  .nav__cta {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  /* Keep the headline crisp: sink the photo deep into the background */
+  .hero__code {
+    width: min(88vw, 34rem);
+    opacity: 0.3;
+    right: -6rem;
+  }
+
+  .project--flagship {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+  }
+
+  .trust__panel {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__top {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---- Large mobile --------------------------------------- */
+@media (max-width: 640px) {
+  :root {
+    --nav-h: 4.25rem;
+  }
+
+  /* Center the hero copy on phones */
+  .hero {
+    min-height: 100svh;
+    text-align: center;
+    padding-top: calc(var(--nav-h) + 1.5rem);
+    padding-bottom: 2.5rem;
+  }
+
+  .hero__content {
+    max-width: none;
+  }
+
+  .hero__title {
+    font-size: clamp(1.9rem, 8.5vw, 3.4rem);
+    font-weight: 900;
+    letter-spacing: 0;
+    line-height: 1.08;
+  }
+
+  .hero__title .line__inner {
+    white-space: nowrap;
+  }
+
+  .hero__lead {
+    max-width: 34ch;
+    font-size: clamp(1rem, 4.2vw, 1.25rem);
+    line-height: 1.55;
+    margin-inline: auto;
+  }
+
+  .hero__actions {
+    justify-content: center;
+  }
+
+  .hero__actions .btn--primary {
+    padding-inline: 1.35rem;
+    font-size: clamp(0.78rem, 3.35vw, 0.95rem);
+    white-space: nowrap;
+  }
+
+  .hero__actions {
+    width: min(100%, 31rem);
+    margin-inline: auto;
+    gap: 0.8rem;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+  }
+
+  /* Phone: the photo becomes the full hero backdrop behind centered copy,
+     faded low and vignetted so the headline stays legible. */
+  .hero__code {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: none;
+    opacity: 0.28;
+    -webkit-mask-image: radial-gradient(
+      120% 80% at 50% 42%,
+      #000 34%,
+      transparent 82%
+    );
+    mask-image: radial-gradient(
+      120% 80% at 50% 42%,
+      #000 34%,
+      transparent 82%
+    );
+  }
+
+  .hero__code-img {
+    object-position: center;
+  }
+
+  .work__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .work {
+    padding-top: 2.75rem;
+  }
+
+  .section__head--split {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .studio__layout {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+  }
+
+  .studio__aside {
+    position: static;
+  }
+
+  .services__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+  }
+
+  .service,
+  .service:nth-child(4),
+  .service:nth-child(5) {
+    grid-column: auto;
+    min-height: 12.5rem;
+    padding: 1.2rem 1rem;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    text-align: left;
+  }
+
+  .service:last-child {
+    grid-column: 1 / -1;
+    min-height: 10rem;
+  }
+
+  .service__icon {
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 0.15rem;
+  }
+
+  .service:hover {
+    transform: none;
+  }
+
+  .contact__channels {
+    gap: 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--r-xl);
+    background: color-mix(in srgb, var(--surface) 50%, transparent);
+  }
+
+  .contact__wa {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--sp-4);
+    padding: 1.15rem 1.25rem;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    text-align: left;
+  }
+
+  .contact__wa + .contact__wa {
+    border-top: 1px solid var(--border);
+  }
+
+  .contact__wa:hover {
+    transform: none;
+  }
+
+  .contact__wa-icon {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .contact__wa-icon svg {
+    width: 1.35rem;
+    height: 1.35rem;
+  }
+
+  .contact__wa-text b {
+    font-size: 1.2rem;
+  }
+
+  .hero__scroll {
+    display: none;
+  }
+}
+
+/* ---- Small mobile --------------------------------------- */
+@media (max-width: 400px) {
+  :root {
+    --gutter: 1.1rem;
+  }
+
+  .footer__top {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+  }
+}
+
+/* ---- Coarse pointer: neutralize hover-only affordances --- */
+@media (hover: none) {
+  .project__media:hover .project__cover {
+    transform: none;
+  }
+}
